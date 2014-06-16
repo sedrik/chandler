@@ -45,6 +45,7 @@ read_config(File) ->
 start_link(Conf) ->
     ok = application:start(crypto),
     ok = application:start(ranch),  
+    ok = application:start(cowlib),
     ok = application:start(cowboy),
     ok = web_server_start(Conf),
     receive
